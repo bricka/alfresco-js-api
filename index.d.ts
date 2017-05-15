@@ -253,7 +253,7 @@ declare namespace AlfrescoApi {
         new(config: any): BpmAuth;
     }
 
-    // ======= Discovery start ======
+    //  ======= Discovery start ======
 
     export interface Discovery {
         new(config: any): Discovery;
@@ -338,480 +338,480 @@ declare namespace AlfrescoApi {
         display: string;
     }
 
-    // ======= Discovery end ======
+    //  ======= Discovery end ======
 
 
-    // ======= Core Start ======
+    //  ======= Core Start ======
 
     export interface FavoritesApi {
         new(client: ApiClient): FavoritesApi;
 
-        addFavorite(personId?: string, favoriteBody?: FavoriteBody):Promise<FavoriteEntry>;
-        //addSiteFavorite(personId?: string, favoriteSiteBody?: FavoriteSiteBody, fields?: Array<string>, opts?: any):Promise<FavoriteSiteEntry>;
-        //removeFavorite(personId?: string, favoriteId?: string, opts?: any):Promise<{}>;
-        removeFavoriteSite(personId?: string, siteId?: string, opts?: any):Promise<{}>;
-        getFavorite(personId?: string, favoriteId?: string, opts?: any):Promise<FavoriteEntry>;
-        getFavoriteSite(personId?: string, siteId?: string, opts?: any):Promise<SiteEntry>;
-        //listFavoriteSitesForPerson(personId?: string, skipCount?: number, maxItems?: number, fields?: Array<string>, opts?: any):Promise<SitePaging>;
-        //listFavorites(personId?: string, skipCount?: number, maxItems?: number, where?: string, fields?: Array<string>, opts?: any):Promise<FavoritePaging>;
+        addFavorite(personId?: string, favoriteBody?: FavoriteBody): Promise<FavoriteEntry>;
+        // addSiteFavorite(personId?: string, favoriteSiteBody?: FavoriteSiteBody, fields?: Array<string>, opts?: any): Promise<FavoriteSiteEntry>;
+        // removeFavorite(personId?: string, favoriteId?: string, opts?: any): Promise<{}>;
+        removeFavoriteSite(personId?: string, siteId?: string, opts?: any): Promise<{}>;
+        getFavorite(personId?: string, favoriteId?: string, opts?: any): Promise<FavoriteEntry>;
+        getFavoriteSite(personId?: string, siteId?: string, opts?: any): Promise<SiteEntry>;
+        // listFavoriteSitesForPerson(personId?: string, skipCount?: number, maxItems?: number, fields?: Array<string>, opts?: any): Promise<SitePaging>;
+        // listFavorites(personId?: string, skipCount?: number, maxItems?: number, where?: string, fields?: Array<string>, opts?: any): Promise<FavoritePaging>;
     }
 
-    export interface ChildAssociationsApi{
+    export interface ChildAssociationsApi {
         new(client: ApiClient): ChildAssociationsApi;
 
-        addNode(nodeld?: string, nodeBody?:NodeBody, opts?:{autoRename?:  boolean, include?: Array<string>, fields?: Array<string>})
-        addSecondaryChildAssoc(parentld?: string, assocChildBody?:AssocChildBody)
-        deleteNode(nodeld?: string, opts?:{permanent?:  boolean})
-        getNodeChildren(nodeld?: string, opts?:{skipCount?: number, maxltems?: number, orderBy?:  string, where?:  string, include?: Array<string>, relativePath?:  string, includeSource?:  boolean, fields?: Array<string>})
-        listParents(childld?: string, opts?:{where?:  string, include?:  string, fields?: Array<string>})
-        listSecondaryChildAssociations(parentld?: string, opts?:{assocType?:  string, where?:  string, include?:  string, fields?: Array<string>})
-        moveNode(nodeld?: string, moveBody?:MoveBody, opts?:{include?: Array<string>, fields?: Array<string>})
+        addNode(nodeld?: string, nodeBody?: NodeBody, opts?: {autoRename?:  boolean, include?: Array<string>, fields?: Array<string>}): Promise<{}>;
+        addSecondaryChildAssoc(parentld?: string, assocChildBody?: AssocChildBody): Promise<{}>;
+        deleteNode(nodeld?: string, opts?: {permanent?:  boolean}): Promise<{}>;
+        getNodeChildren(nodeld?: string, opts?: {skipCount?: number, maxltems?: number, orderBy?:  string, where?:  string, include?: Array<string>, relativePath?:  string, includeSource?:  boolean, fields?: Array<string>}): Promise<{}>;
+        listParents(childld?: string, opts?: {where?:  string, include?:  string, fields?: Array<string>}): Promise<{}>;
+        listSecondaryChildAssociations(parentld?: string, opts?: {assocType?:  string, where?:  string, include?:  string, fields?: Array<string>}): Promise<{}>;
+        moveNode(nodeld?: string, moveBody?: MoveBody, opts?: {include?: Array<string>, fields?: Array<string>}): Promise<{}>;
     }
 
     export interface AssociationsApi {
         new(client: ApiClient): AssociationsApi;
 
-        addAssoc(sourceld?:string, assocTargetBody?:AssocTargetBody):Promise<{}>;
-        listSourceNodeAssociations(targetld?:string, opts?:{where?: string, include?: string, fields?: Array<string>}):Promise<{}>;
-        listTargetAssociations(sourceld?:string, opts?:{where?: string, include?: string, fields?: Array<string>}):Promise<{}>;
-        removeAssoc(sourceld?:string, targetld?:string, opts?:{assocType?: string}):Promise<{}>;
+        addAssoc(sourceld?: string, assocTargetBody?: AssocTargetBody): Promise<{}>;
+        listSourceNodeAssociations(targetld?: string, opts?: {where?: string, include?: string, fields?: Array<string>}): Promise<{}>;
+        listTargetAssociations(sourceld?: string, opts?: {where?: string, include?: string, fields?: Array<string>}): Promise<{}>;
+        removeAssoc(sourceld?: string, targetld?: string, opts?: {assocType?: string}): Promise<{}>;
 
     }
 
     export interface CommentsApi {
         new(client: ApiClient): CommentsApi;
 
-        addComment(nodeId?: string, commentBody?: CommentBody, opts?: any):Promise<CommentEntry>;
-        removeComment(nodeId?: string, commentId?: string):Promise<{}>;
-        getomments(nodeId?: string, opts?: any):Promise<CommentPaging>;
-        updateComment(nodeId?: string, commentId?: string, commentBody?: CommentBody, opts?: any):Promise<CommentEntry>;
+        addComment(nodeId?: string, commentBody?: CommentBody, opts?: any): Promise<CommentEntry>;
+        removeComment(nodeId?: string, commentId?: string): Promise<{}>;
+        getomments(nodeId?: string, opts?: any): Promise<CommentPaging>;
+        updateComment(nodeId?: string, commentId?: string, commentBody?: CommentBody, opts?: any): Promise<CommentEntry>;
     }
 
     export interface NetworksApi {
         new(client: ApiClient): NetworksApi;
 
-        getNetwork(networkId?: string, opts?: any):Promise<PersonNetworkEntry>;
-        getNetworkForPerson(personId?: string, networkId?: string, opts?: any):Promise<PersonNetworkEntry>;
-        listNetworksForPerson(personId?: string, opts?: any):Promise<PersonNetworkPaging>;
+        getNetwork(networkId?: string, opts?: any): Promise<PersonNetworkEntry>;
+        getNetworkForPerson(personId?: string, networkId?: string, opts?: any): Promise<PersonNetworkEntry>;
+        listNetworksForPerson(personId?: string, opts?: any): Promise<PersonNetworkPaging>;
     }
 
     export interface NodesApi {
         new(client: ApiClient): NodesApi;
 
-        addNode(nodeld?:string, nodeBody?:NodeBody, opts?:{autoRename?: boolean, include?: Array<string>, fields?: Array<string>}):Promise<NodeEntry>;
-        copyNode(nodeld?:string, copyBody?:CopyBody, opts?:{include?: Array<string>, fields?: Array<string>}):Promise<NodeEntry>;
-        deleteNode(nodeld?:string, opts?:{permanent?: boolean}):Promise<{}>;
-        getDeletedNode(nodeld?:string, opts?:{include?: Array<string>}):Promise<DeletedNodeEntry>;
-        getDeletedNodes(opts?:{skipCount?: number, maxltems?: number, include?: Array<string>}):Promise<DeletedNodeEntry>;
-        getFileContent(nodeld?:string, opts?:{attachment?: boolean, ifModifiedSince?: Date}):Promise<{}>;
-        getNode(nodeld?:string, opts?:{include?: Array<string>, relativePath?: string, fields?: Array<string>}):Promise<{}>;
-        getNodeContent(nodeId?: string, opts?: any):Promise<{}>;
-        getNodeChildren(nodeld?:string, opts?:{skipCount?: number, maxltems?: number, orderBy?: string, where?: string, include?: Array<string>, relativePath?: string, includeSource?: boolean, fields?: Array<string>}):Promise<{}>;
-        getParents(nodeld?:string, opts?:{where?: string, include?: Array<string>, skipCount?: number, maxltems?: number, includeSource?: boolean, fields?: Array<string>}):Promise<{}>;
-        getSecondaryChildren(nodeld?:string, opts?:{where?: string, include?: Array<string>, skipCount?: number, maxltems?: number, includeSource?: boolean, fields?: Array<string>}):Promise<{}>;
-        getSourceAssociations(nodeld?:string, opts?:{where?: string, include?: Array<string>, fields?: Array<string>}):Promise<{}>;
-        getTargetAssociations(nodeld?:string, opts?:{where?: string, include?: Array<string>, fields?: Array<string>}):Promise<{}>;
-        lockNode(nodeld?:string, nodeBodyLock?:NodeBodyLock, opts?:{include?: Array<string>, fields?: Array<string>}):Promise<{}>;
-        unlockNode(nodeld?:string, opts?:{include?: Array<string>, fields?: Array<string>}):Promise<{}>;
-        moveNode(nodeld?:string, moveBody?:MoveBody, opts?:{include?: Array<string>, fields?: Array<string>}):Promise<{}>;
-        purgeDeletedNode(nodeld?:string):Promise<{}>;
-        restoreNode(nodeld?:string):Promise<NodeEntry>;
-        updateFileContent(nodeld?:string, contentBody?:string, opts?:{majorVersion?: boolean, comment?: string, include?: Array<string>, fields?: Array<string>}):Promise<NodeEntry>;
-        updateNodeContent(nodeId?: string, contentBody?: string, opts?: any):Promise<NodeEntry>;
-        updateNode(nodeld?:string, nodeBody?:NodeBody, opts?:{include?: Array<string>, fields?: Array<string>}):Promise<NodeEntry>;
+        addNode(nodeld?: string, nodeBody?: NodeBody, opts?: {autoRename?: boolean, include?: Array<string>, fields?: Array<string>}): Promise<NodeEntry>;
+        copyNode(nodeld?: string, copyBody?: CopyBody, opts?: {include?: Array<string>, fields?: Array<string>}): Promise<NodeEntry>;
+        deleteNode(nodeld?: string, opts?: {permanent?: boolean}): Promise<{}>;
+        getDeletedNode(nodeld?: string, opts?: {include?: Array<string>}): Promise<DeletedNodeEntry>;
+        getDeletedNodes(opts?: {skipCount?: number, maxltems?: number, include?: Array<string>}): Promise<DeletedNodeEntry>;
+        getFileContent(nodeld?: string, opts?: {attachment?: boolean, ifModifiedSince?: Date}): Promise<{}>;
+        getNode(nodeld?: string, opts?: {include?: Array<string>, relativePath?: string, fields?: Array<string>}): Promise<{}>;
+        getNodeContent(nodeId?: string, opts?: any): Promise<{}>;
+        getNodeChildren(nodeld?: string, opts?: {skipCount?: number, maxltems?: number, orderBy?: string, where?: string, include?: Array<string>, relativePath?: string, includeSource?: boolean, fields?: Array<string>}): Promise<{}>;
+        getParents(nodeld?: string, opts?: {where?: string, include?: Array<string>, skipCount?: number, maxltems?: number, includeSource?: boolean, fields?: Array<string>}): Promise<{}>;
+        getSecondaryChildren(nodeld?: string, opts?: {where?: string, include?: Array<string>, skipCount?: number, maxltems?: number, includeSource?: boolean, fields?: Array<string>}): Promise<{}>;
+        getSourceAssociations(nodeld?: string, opts?: {where?: string, include?: Array<string>, fields?: Array<string>}): Promise<{}>;
+        getTargetAssociations(nodeld?: string, opts?: {where?: string, include?: Array<string>, fields?: Array<string>}): Promise<{}>;
+        lockNode(nodeld?: string, nodeBodyLock?: NodeBodyLock, opts?: {include?: Array<string>, fields?: Array<string>}): Promise<{}>;
+        unlockNode(nodeld?: string, opts?: {include?: Array<string>, fields?: Array<string>}): Promise<{}>;
+        moveNode(nodeld?: string, moveBody?: MoveBody, opts?: {include?: Array<string>, fields?: Array<string>}): Promise<{}>;
+        purgeDeletedNode(nodeld?: string): Promise<{}>;
+        restoreNode(nodeld?: string): Promise<NodeEntry>;
+        updateFileContent(nodeld?: string, contentBody?: string, opts?: {majorVersion?: boolean, comment?: string, include?: Array<string>, fields?: Array<string>}): Promise<NodeEntry>;
+        updateNodeContent(nodeId?: string, contentBody?: string, opts?: any): Promise<NodeEntry>;
+        updateNode(nodeld?: string, nodeBody?: NodeBody, opts?: {include?: Array<string>, fields?: Array<string>}): Promise<NodeEntry>;
     }
 
     export interface SitesApi {
         new(client: ApiClient): SitesApi;
 
-        addSite(siteBodyadd?: SiteBodyadd, skipConfiguration?: boolean, skipAddToFavorites?: boolean, fields?: Array<string>, opts?: any):Promise<SiteEntry>;
-        addSiteMembership(siteId?: string, siteMembershipBodyadd?: SiteMembershipBodyadd, fields?: Array<string>, opts?: any):Promise<SiteMemberEntry>;
-        deleteSite(siteId?: string, permanent?: boolean, opts?: any):Promise<{}>;
-        deleteSiteMembership(siteId?: string, personId?: string, opts?: any):Promise<{}>;
-        deleteSiteMembershipForPerson(personId?: string, siteId?: string, opts?: any):Promise<{}>;
-        deleteSiteMembershipRequestForPerson(personId?: string, siteId?: string, opts?: any):Promise<{}>;
-        getSite(siteId?: string, relations?: Array<string>, fields?: Array<string>, opts?: any):Promise<SiteEntry>;
-        getSiteContainer(siteId?: string, containerId?: string, fields?: Array<string>, opts?: any):Promise<SiteContainerEntry>;
-        getSiteMembership(siteId?: string, personId?: string, fields?: Array<string>, opts?: any):Promise<SiteMemberEntry>;
-        getSiteMembershipForPerson(personId?: string, siteId?: string, opts?: any):Promise<SiteRoleEntry>;
-        getSiteMembershipRequestForPerson(personId?: string, siteId?: string, fields?: Array<string>, opts?: any):Promise<SiteMembershipRequestEntry>;
-        listSiteContainers(siteId?: string, skipCount?: number, maxItems?: number, fields?: Array<string>, opts?: any):Promise<SiteContainerPaging>;
-        listSiteMembershipRequestsForPerson(personId?: string, skipCount?: number, maxItems?: number, fields?: Array<string>, opts?: any):Promise<SiteMembershipRequestPaging>;
-        listSiteMemberships(siteId?: string, skipCount?: number, maxItems?: number, fields?: Array<string>, opts?: any):Promise<SiteMemberPaging>;
-        listSiteMembershipsForPerson(personId?: string, skipCount?: number, maxItems?: number, orderBy?: Array<string>, relations?: Array<string>, fields?: Array<string>, where?: string, opts?: any):Promise<SiteRolePaging>;
-        listSites(skipCount?: number, maxItems?: number, orderBy?: Array<string>, relations?: Array<string>, fields?: Array<string>, where?: string, opts?: any):Promise<SitePaging>;
-        updateSite(siteId?: string, siteBodyUpdate?: SiteBodyUpdate, fields?: Array<string>, opts?: any):Promise<SiteEntry>;
-        updateSiteMembership(siteId?: string, personId?: string, siteMembershipBodyUpdate?: SiteMembershipBodyUpdate, fields?: Array<string>, opts?: any):Promise<SiteMemberEntry>;
-        updateSiteMembershipRequestForPerson(personId?: string, siteId?: string, siteMembershipRequestBodyUpdate?: SiteMembershipRequestBodyUpdate, fields?: Array<string>, opts?: any):Promise<SiteMembershipRequestEntry>;
+        addSite(siteBodyadd?: SiteBodyadd, skipConfiguration?: boolean, skipAddToFavorites?: boolean, fields?: Array<string>, opts?: any): Promise<SiteEntry>;
+        addSiteMembership(siteId?: string, siteMembershipBodyadd?: SiteMembershipBodyadd, fields?: Array<string>, opts?: any): Promise<SiteMemberEntry>;
+        deleteSite(siteId?: string, permanent?: boolean, opts?: any): Promise<{}>;
+        deleteSiteMembership(siteId?: string, personId?: string, opts?: any): Promise<{}>;
+        deleteSiteMembershipForPerson(personId?: string, siteId?: string, opts?: any): Promise<{}>;
+        deleteSiteMembershipRequestForPerson(personId?: string, siteId?: string, opts?: any): Promise<{}>;
+        getSite(siteId?: string, relations?: Array<string>, fields?: Array<string>, opts?: any): Promise<SiteEntry>;
+        getSiteContainer(siteId?: string, containerId?: string, fields?: Array<string>, opts?: any): Promise<SiteContainerEntry>;
+        getSiteMembership(siteId?: string, personId?: string, fields?: Array<string>, opts?: any): Promise<SiteMemberEntry>;
+        getSiteMembershipForPerson(personId?: string, siteId?: string, opts?: any): Promise<SiteRoleEntry>;
+        getSiteMembershipRequestForPerson(personId?: string, siteId?: string, fields?: Array<string>, opts?: any): Promise<SiteMembershipRequestEntry>;
+        listSiteContainers(siteId?: string, skipCount?: number, maxItems?: number, fields?: Array<string>, opts?: any): Promise<SiteContainerPaging>;
+        listSiteMembershipRequestsForPerson(personId?: string, skipCount?: number, maxItems?: number, fields?: Array<string>, opts?: any): Promise<SiteMembershipRequestPaging>;
+        listSiteMemberships(siteId?: string, skipCount?: number, maxItems?: number, fields?: Array<string>, opts?: any): Promise<SiteMemberPaging>;
+        listSiteMembershipsForPerson(personId?: string, skipCount?: number, maxItems?: number, orderBy?: Array<string>, relations?: Array<string>, fields?: Array<string>, where?: string, opts?: any): Promise<SiteRolePaging>;
+        listSites(skipCount?: number, maxItems?: number, orderBy?: Array<string>, relations?: Array<string>, fields?: Array<string>, where?: string, opts?: any): Promise<SitePaging>;
+        updateSite(siteId?: string, siteBodyUpdate?: SiteBodyUpdate, fields?: Array<string>, opts?: any): Promise<SiteEntry>;
+        updateSiteMembership(siteId?: string, personId?: string, siteMembershipBodyUpdate?: SiteMembershipBodyUpdate, fields?: Array<string>, opts?: any): Promise<SiteMemberEntry>;
+        updateSiteMembershipRequestForPerson(personId?: string, siteId?: string, siteMembershipRequestBodyUpdate?: SiteMembershipRequestBodyUpdate, fields?: Array<string>, opts?: any): Promise<SiteMembershipRequestEntry>;
     }
 
     export interface PeopleApi {
         new(client: ApiClient): PeopleApi;
 
-        addFavorite(personld?:string, favoriteBody?: FavoriteBody):Promise<FavoriteEntry>;
-        addSiteMembershipRequest(personld?:string, siteMembershipBody?:SiteMembershipRequestBody):Promise<SiteMembershipRequestEntry>;
-        deleteFavoriteSite(personld?:string, siteld?:string):Promise<{}>;
-        favoriteSite(personld?:string, favoriteSiteBody?:FavoriteSiteBody):Promise<FavoriteEntry>;
-        getActivities(personld?:string, opts?:{skipCount?: number, maxltems?: number, who?: string, siteld?: string, fields?: Array<string>}):Promise<ActivityPaging>;
-        getFavorite(personld?:string, favoriteld?:string, opts?:{fields?: Array<string>}):Promise<FavoriteEntry>;
-        getFavoriteSite(personld?:string, siteld?:string, opts?:{fields?: Array<string>}):Promise<SiteEntry>;
-        getFavoriteSites(personld?:string, opts?:{skipCount?: number, maxltems?: number, fields?: Array<string>}):Promise<SitePaging>;
-        getFavorites(personld?:string, opts?:{skipCount?: number, maxltems?: number, where?: string, fields?: Array<string>}):Promise<FavoritePaging>;
-        getPerson(personld?:string, opts?:{fields?: Array<string>}):Promise<PersonEntry>;
-        getPersonNetwork(personld?:string, networkld?:string, opts?:{fields?: Array<string>}):Promise<PersonNetworkEntry>;
-        getPersonNetworks(personld?:string, opts?:{skipCount?: number, maxltems?: number, fields?: Array<string>}):Promise<PersonNetworkPaging>;
-        getPreference(personld?:string, preferenceName?:string, opts?:{fields?: Array<string>}):Promise<PreferenceEntry>;
-        getPreferences(personld?:string, opts?:{skipCount?: number, maxltems?: number, fields?: Array<string>}):Promise<PreferencePaging>;
-        getSiteMembership(personld?:string, opts?:{skipCount?: number, maxltems?: number, orderBy?: string, relations?: Array<string>, fields?: Array<string>}):Promise<SiteMembershipRequestEntry>;
-        getSiteMembershipRequest(personld?:string, siteld?:string, opts?:{fields?: Array<string>}):Promise<SiteMembershipRequestEntry>;
-        getSiteMembershipRequests(personld?:string, opts?:{skipCount?: number, maxltems?: number, fields?: Array<string>}):Promise<SiteMembershipRequestPaging>;
-        removeFavoriteSite(personld?:string, favoriteld?:string):Promise<{}>;
-        removeSiteMembershipRequest(personld?:string, siteld?:string):Promise<{}>;
-        updateSiteMembershipRequest(personld?:string, siteld?:string, siteMembershipBody?:SiteMembershipRequestBody):Promise<{}>;
+        addFavorite(personld?: string, favoriteBody?: FavoriteBody): Promise<FavoriteEntry>;
+        addSiteMembershipRequest(personld?: string, siteMembershipBody?: SiteMembershipRequestBody): Promise<SiteMembershipRequestEntry>;
+        deleteFavoriteSite(personld?: string, siteld?: string): Promise<{}>;
+        favoriteSite(personld?: string, favoriteSiteBody?: FavoriteSiteBody): Promise<FavoriteEntry>;
+        getActivities(personld?: string, opts?: {skipCount?: number, maxltems?: number, who?: string, siteld?: string, fields?: Array<string>}): Promise<ActivityPaging>;
+        getFavorite(personld?: string, favoriteld?: string, opts?: {fields?: Array<string>}): Promise<FavoriteEntry>;
+        getFavoriteSite(personld?: string, siteld?: string, opts?: {fields?: Array<string>}): Promise<SiteEntry>;
+        getFavoriteSites(personld?: string, opts?: {skipCount?: number, maxltems?: number, fields?: Array<string>}): Promise<SitePaging>;
+        getFavorites(personld?: string, opts?: {skipCount?: number, maxltems?: number, where?: string, fields?: Array<string>}): Promise<FavoritePaging>;
+        getPerson(personld?: string, opts?: {fields?: Array<string>}): Promise<PersonEntry>;
+        getPersonNetwork(personld?: string, networkld?: string, opts?: {fields?: Array<string>}): Promise<PersonNetworkEntry>;
+        getPersonNetworks(personld?: string, opts?: {skipCount?: number, maxltems?: number, fields?: Array<string>}): Promise<PersonNetworkPaging>;
+        getPreference(personld?: string, preferenceName?: string, opts?: {fields?: Array<string>}): Promise<PreferenceEntry>;
+        getPreferences(personld?: string, opts?: {skipCount?: number, maxltems?: number, fields?: Array<string>}): Promise<PreferencePaging>;
+        getSiteMembership(personld?: string, opts?: {skipCount?: number, maxltems?: number, orderBy?: string, relations?: Array<string>, fields?: Array<string>}): Promise<SiteMembershipRequestEntry>;
+        getSiteMembershipRequest(personld?: string, siteld?: string, opts?: {fields?: Array<string>}): Promise<SiteMembershipRequestEntry>;
+        getSiteMembershipRequests(personld?: string, opts?: {skipCount?: number, maxltems?: number, fields?: Array<string>}): Promise<SiteMembershipRequestPaging>;
+        removeFavoriteSite(personld?: string, favoriteld?: string): Promise<{}>;
+        removeSiteMembershipRequest(personld?: string, siteld?: string): Promise<{}>;
+        updateSiteMembershipRequest(personld?: string, siteld?: string, siteMembershipBody?: SiteMembershipRequestBody): Promise<{}>;
     }
 
-//export interface PreferencesApi {
-//    getPreference(personId?: string, opts?: any):Promise<PreferenceEntry>;
-//    getPreferences(personId?: string, opts?: any):Promise<PreferencePaging>;
-//}
+// export interface PreferencesApi {
+//     getPreference(personId?: string, opts?: any): Promise<PreferenceEntry>;
+//     getPreferences(personId?: string, opts?: any): Promise<PreferencePaging>;
+// }
 
     export interface QueriesApi {
         new(client: ApiClient): QueriesApi;
 
-        findNodes(term?: string, opts?: any):Promise<NodePaging>;
-        findPeople(term?: string, opts?: any):Promise<PersonPaging>;
-        findSites(term?: string, opts?: any):Promise<SitePaging>;
+        findNodes(term?: string, opts?: any): Promise<NodePaging>;
+        findPeople(term?: string, opts?: any): Promise<PersonPaging>;
+        findSites(term?: string, opts?: any): Promise<SitePaging>;
     }
 
     export interface RenditionsApi {
         new(client: ApiClient): RenditionsApi;
 
-        createRendition(nodeId?: string, renditionBody?: RenditionBody):Promise<{}>;
-        getRendition(nodeId?: string, renditionId?: string):Promise<RenditionEntry>;
-        getRenditionContent(nodeId?: string, renditionId?: string, opts?: any):Promise<{}>;
-        getRenditions(nodeId?: string):Promise<RenditionPaging>;
-        getSharedLinkRendition(sharedId?: string):Promise<RenditionEntry>;
-        getSharedLinkRenditionContent(sharedId?: string, renditionId?: string, opts?: any):Promise<{}>;
+        createRendition(nodeId?: string, renditionBody?: RenditionBody): Promise<{}>;
+        getRendition(nodeId?: string, renditionId?: string): Promise<RenditionEntry>;
+        getRenditionContent(nodeId?: string, renditionId?: string, opts?: any): Promise<{}>;
+        getRenditions(nodeId?: string): Promise<RenditionPaging>;
+        getSharedLinkRendition(sharedId?: string): Promise<RenditionEntry>;
+        getSharedLinkRenditionContent(sharedId?: string, renditionId?: string, opts?: any): Promise<{}>;
     }
 
     export interface RatingsApi {
         new(client: ApiClient): RatingsApi;
 
-        rate(nodeId?: string, ratingBody?: RatingBody, opts?: any):Promise<RatingEntry>;
-        removeRating(nodeId?: string, ratingId?: string):Promise<{}>;
-        getRating(nodeId?: string, ratingId?: string, opts?: any):Promise<RatingEntry>;
-        getRatings(nodeId?: string, opts?: any):Promise<RatingPaging>;
+        rate(nodeId?: string, ratingBody?: RatingBody, opts?: any): Promise<RatingEntry>;
+        removeRating(nodeId?: string, ratingId?: string): Promise<{}>;
+        getRating(nodeId?: string, ratingId?: string, opts?: any): Promise<RatingEntry>;
+        getRatings(nodeId?: string, opts?: any): Promise<RatingPaging>;
     }
 
     export interface SharedlinksApi {
         new(client: ApiClient): SharedlinksApi;
 
-        addSharedLink(sharedLinkBody?: SharedLinkBody, opts?: any):Promise<SharedLinkEntry>;
-        deleteSharedLink(sharedId?: string):Promise<{}>;
-        emailSharedLink(sharedId?: string, emailSharedLinkBody?: EmailSharedLinkBody, opts?: any):Promise<{}>;
-        findSharedLinks(opts?: any):Promise<SharedLinkPaging>;
-        getSharedLink(sharedId?: string, opts?: any):Promise<SharedLinkEntry>;
-        getSharedLinkContent(sharedId?: string, opts?: any):Promise<{}>;
+        addSharedLink(sharedLinkBody?: SharedLinkBody, opts?: any): Promise<SharedLinkEntry>;
+        deleteSharedLink(sharedId?: string): Promise<{}>;
+        emailSharedLink(sharedId?: string, emailSharedLinkBody?: EmailSharedLinkBody, opts?: any): Promise<{}>;
+        findSharedLinks(opts?: any): Promise<SharedLinkPaging>;
+        getSharedLink(sharedId?: string, opts?: any): Promise<SharedLinkEntry>;
+        getSharedLinkContent(sharedId?: string, opts?: any): Promise<{}>;
     }
 
     export interface TagsApi {
         new(client: ApiClient): TagsApi;
 
-        addTag(nodeId?: string, tagBody?: TagBody):Promise<TagEntry>;
-        removeTag(nodeId?: string, tagId?: string):Promise<{}>;
-        getTag(tagId?: string, fields?: Array<string>, opts?: any):Promise<TagEntry>;
-        getNodeTags(nodeId?: string, opts?: any):Promise<TagPaging>;
-        getTags(opts?: any):Promise<TagPaging>;
-        updateTag(tagId?: string, tagBody?: TagBody):Promise<TagEntry>;
+        addTag(nodeId?: string, tagBody?: TagBody): Promise<TagEntry>;
+        removeTag(nodeId?: string, tagId?: string): Promise<{}>;
+        getTag(tagId?: string, fields?: Array<string>, opts?: any): Promise<TagEntry>;
+        getNodeTags(nodeId?: string, opts?: any): Promise<TagPaging>;
+        getTags(opts?: any): Promise<TagPaging>;
+        updateTag(tagId?: string, tagBody?: TagBody): Promise<TagEntry>;
     }
 
     export interface WebscriptApi {
         new(client: ApiClient): WebscriptApi;
 
-        executeWebScript(httpMethod?: string, scriptPath?: string, scriptArgs?:any, contextRoot?: string, servicePat?: string, postBody?: string):Promise<{}>;
+        executeWebScript(httpMethod?: string, scriptPath?: string, scriptArgs?: any, contextRoot?: string, servicePat?: string, postBody?: string): Promise<{}>;
     }
 
-//export interface TrashcanApi {
-//    deleteremovedNode(nodeId?: string, opts?: any):Promise<{}>;
-//    getremovedNode(nodeId?: string, include?: Array<string>, opts?: any):Promise<removedNodeEntry>;
-//    listremovedNodes(skipCount?: number, maxItems?: number, include?: Array<string>, opts?: any):Promise<removedNodesPaging>;
-//    restoreremovedNode(nodeId?: string, fields?: Array<string>, opts?: any):Promise<NodeEntry>;
-//}
+// export interface TrashcanApi {
+//     deleteremovedNode(nodeId?: string, opts?: any): Promise<{}>;
+//     getremovedNode(nodeId?: string, include?: Array<string>, opts?: any): Promise<removedNodeEntry>;
+//     listremovedNodes(skipCount?: number, maxItems?: number, include?: Array<string>, opts?: any): Promise<removedNodesPaging>;
+//     restoreremovedNode(nodeId?: string, fields?: Array<string>, opts?: any): Promise<NodeEntry>;
+// }
 
-//export interface VersionsApi {
-//    removeVersion(nodeId?: string, versionId?: string, opts?: any):Promise<{}>;
-//    getVersion(nodeId?: string, versionId?: string, opts?: any):Promise<VersionEntry>;
-//    getVersionContent(nodeId?: string, versionId?: string, attachment?: boolean, ifModifiedSince?: Date, opts?: any):Promise<{}>;
-//    listVersionHistory(nodeId?: string, include?: Array<string>, fields?: Array<string>, skipCount?: number, maxItems?: number, opts?: any):Promise<VersionPaging>;
-//    revertVersion(nodeId?: string, versionId?: string, revertBody?: RevertBody, fields?: Array<string>, opts?: any):Promise<VersionEntry>;
-//}
+// export interface VersionsApi {
+//     removeVersion(nodeId?: string, versionId?: string, opts?: any): Promise<{}>;
+//     getVersion(nodeId?: string, versionId?: string, opts?: any): Promise<VersionEntry>;
+//     getVersionContent(nodeId?: string, versionId?: string, attachment?: boolean, ifModifiedSince?: Date, opts?: any): Promise<{}>;
+//     listVersionHistory(nodeId?: string, include?: Array<string>, fields?: Array<string>, skipCount?: number, maxItems?: number, opts?: any): Promise<VersionPaging>;
+//     revertVersion(nodeId?: string, versionId?: string, revertBody?: RevertBody, fields?: Array<string>, opts?: any): Promise<VersionEntry>;
+// }
 
     export interface Activity {
-        "postPersonId"?: string;
-        "id"?: number;
-        "siteId"?: string;
-        "postedAt"?: Date;
-        "feedPersonId"?: string;
-        "activitySummary"?: {
+        postPersonId?: string;
+        id?: number;
+        siteId?: string;
+        postedAt?: Date;
+        feedPersonId?: string;
+        activitySummary?: {
             [key: string]: string;
         };
-        "activityType"?: string;
+        activityType?: string;
     }
 
     export interface ActivityEntry {
-        "entry"?: Activity;
+        entry?: Activity;
     }
 
     export interface AssocChildBody {
-        "childId" :string;
-        "assocType" :string;
+        childId: string;
+        assocType: string;
     }
 
     export interface DeletedNodeEntry {
-        "entry"?: DeletedNode;
+        entry?: DeletedNode;
     }
 
     export interface DeletedNode {
-        "archivedByUser" ?:UserInfo;
-        "archivedAt" ?:Date;
+        archivedByUser?: UserInfo;
+        archivedAt?: Date;
     }
 
     export interface ActivityPaging {
-        "list"?: ActivityPagingList;
+        list?: ActivityPagingList;
     }
 
     export interface ActivityPagingList {
-        "entries"?: Array<ActivityEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<ActivityEntry>;
+        pagination?: Pagination;
     }
 
     export interface Association {
-        "targetId"?: string;
-        "assocType"?: string;
+        targetId?: string;
+        assocType?: string;
     }
 
     export interface AssociationBody {
-        "targetId"?: string;
-        "assocType"?: string;
+        targetId?: string;
+        assocType?: string;
     }
 
     export interface AssociationEntry {
-        "entry"?: Association;
+        entry?: Association;
     }
 
     export interface AssociationInfo {
-        "assocType"?: string;
+        assocType?: string;
     }
 
     export interface ChildAssociation {
-        "childId"?: string;
-        "assocType"?: string;
+        childId?: string;
+        assocType?: string;
     }
 
     export interface ChildAssociationBody {
-        "childId"?: string;
-        "assocType"?: string;
+        childId?: string;
+        assocType?: string;
     }
 
     export interface ChildAssociationEntry {
-        "entry"?: ChildAssociation;
+        entry?: ChildAssociation;
     }
 
     export interface ChildAssociationInfo {
-        "assocType"?: string;
-        "isPrimary"?: boolean;
+        assocType?: string;
+        isPrimary?: boolean;
     }
 
     export interface AssocTargetBody {
-        "targetId"?: string;
-        "assocType"?: string;
+        targetId?: string;
+        assocType?: string;
     }
 
     export interface Comment {
-        "id"?: string;
-        "content"?: string;
-        "adddBy"?: Person;
-        "adddAt"?: Date;
-        "edited"?: boolean;
-        "modifiedBy"?: Person;
-        "modifiedAt"?: Date;
-        "canEdit"?: boolean;
-        "canremove"?: boolean;
+        id?: string;
+        content?: string;
+        adddBy?: Person;
+        adddAt?: Date;
+        edited?: boolean;
+        modifiedBy?: Person;
+        modifiedAt?: Date;
+        canEdit?: boolean;
+        canremove?: boolean;
     }
 
     export interface CommentBody {
-        "content"?: string;
+        content?: string;
     }
 
     export interface CommentEntry {
-        "entry"?: Comment;
+        entry?: Comment;
     }
 
     export interface CommentPaging {
-        "list"?: CommentPagingList;
+        list?: CommentPagingList;
     }
 
     export interface CommentPagingList {
-        "entries"?: Array<CommentEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<CommentEntry>;
+        pagination?: Pagination;
     }
 
     export interface Company {
-        "organization"?: string;
-        "address1"?: string;
-        "address2"?: string;
-        "address3"?: string;
-        "postcode"?: string;
-        "telephone"?: string;
-        "fax"?: string;
-        "email"?: string;
+        organization?: string;
+        address1?: string;
+        address2?: string;
+        address3?: string;
+        postcode?: string;
+        telephone?: string;
+        fax?: string;
+        email?: string;
     }
 
     export interface ContentInfo {
-        "mimeType"?: string;
-        "mimeTypeName"?: string;
-        "sizeInBytes"?: number;
-        "encoding"?: string;
+        mimeType?: string;
+        mimeTypeName?: string;
+        sizeInBytes?: number;
+        encoding?: string;
     }
 
-    export interface removedNode extends Node {
-        "archivedByUser"?: UserInfo;
-        "archivedAt"?: Date;
+    export interface RemovedNode extends Node {
+        archivedByUser?: UserInfo;
+        archivedAt?: Date;
     }
 
-    export interface removedNodeEntry {
-        "entry"?: removedNode;
+    export interface RemovedNodeEntry {
+        entry?: RemovedNode;
     }
 
-    export interface removedNodesPaging {
-        "list"?: removedNodesPagingList;
+    export interface RemovedNodesPaging {
+        list?: RemovedNodesPagingList;
     }
 
-    export interface removedNodesPagingList {
-        "entries"?: Array<removedNodeEntry>;
-        "pagination"?: Pagination;
+    export interface RemovedNodesPagingList {
+        entries?: Array<RemovedNodeEntry>;
+        pagination?: Pagination;
     }
 
     export interface Error {
-        "error"?: ErrorError;
+        error?: ErrorError;
     }
 
     export interface ErrorError {
-        "errorKey"?: string;
-        "briefSummary"?: string;
-        "descriptionURL"?: string;
-        "logId"?: string;
-        "stackTrace"?: string;
-        "statusCode"?: number;
+        errorKey?: string;
+        briefSummary?: string;
+        descriptionURL?: string;
+        logId?: string;
+        stackTrace?: string;
+        statusCode?: number;
     }
 
     export interface Favorite {
-        "targetGuid"?: string;
-        "adddAt"?: Date;
-        "target"?: any;
+        targetGuid?: string;
+        adddAt?: Date;
+        target?: any;
     }
 
     export interface FavoriteBody {
-        "target"?: any;
+        target?: any;
     }
 
     export interface FavoriteEntry {
-        "entry"?: Favorite;
+        entry?: Favorite;
     }
 
     export interface FavoritePaging {
-        "list"?: FavoritePagingList;
+        list?: FavoritePagingList;
     }
 
     export interface FavoritePagingList {
-        "entries"?: Array<FavoriteEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<FavoriteEntry>;
+        pagination?: Pagination;
     }
 
     export interface FavoriteSite {
-        "id"?: string;
+        id?: string;
     }
 
     export interface FavoriteSiteBody {
-        "id"?: string;
+        id?: string;
     }
 
     export interface FavoriteSiteEntry {
-        "entry"?: FavoriteSite;
+        entry?: FavoriteSite;
     }
 
     export interface NetworkQuota {
-        "id"?: string;
-        "limit"?: number;
-        "usage"?: number;
+        id?: string;
+        limit?: number;
+        usage?: number;
     }
 
     export interface Node {
-        "id"?: string;
-        "name"?: string;
-        "nodeType"?: string;
-        "isFolder"?: boolean;
-        "isFile"?: boolean;
-        "isLocked"?: boolean;
-        "modifiedAt"?: Date;
-        "modifiedByUser"?: UserInfo;
-        "adddAt"?: Date;
-        "adddByUser"?: UserInfo;
-        "parentId"?: string;
-        "isLink"?: boolean;
-        "content"?: ContentInfo;
-        "aspectNames"?: Array<string>;
-        "properties"?: any;
-        "allowableOperations"?: Array<string>;
-        "path"?: PathInfo;
-        "permissions"?: PermissionsInfo;
+        id?: string;
+        name?: string;
+        nodeType?: string;
+        isFolder?: boolean;
+        isFile?: boolean;
+        isLocked?: boolean;
+        modifiedAt?: Date;
+        modifiedByUser?: UserInfo;
+        adddAt?: Date;
+        adddByUser?: UserInfo;
+        parentId?: string;
+        isLink?: boolean;
+        content?: ContentInfo;
+        aspectNames?: Array<string>;
+        properties?: any;
+        allowableOperations?: Array<string>;
+        path?: PathInfo;
+        permissions?: PermissionsInfo;
     }
 
     export interface NodeAssociation extends Node {
-        "association"?: AssociationInfo;
+        association?: AssociationInfo;
     }
 
     export interface NodeAssociationEntry {
-        "entry"?: NodeAssociation;
+        entry?: NodeAssociation;
     }
 
     export interface NodeAssociationPaging {
-        "list"?: NodeAssociationPagingList;
+        list?: NodeAssociationPagingList;
     }
 
     export interface NodeAssociationPagingList {
-        "entries"?: Array<NodeAssociationEntry>;
-        "pagination"?: Pagination;
-        "source"?: Node;
+        entries?: Array<NodeAssociationEntry>;
+        pagination?: Pagination;
+        source?: Node;
     }
 
     export interface CopyBody {
-        "targetParentId"?: string;
-        "name"?: string;
+        targetParentId?: string;
+        name?: string;
     }
 
     export interface NodeBody {
-        "name"?: string;
-        "nodeType"?: string;
-        "aspectNames"?: Array<string>;
-        "properties"?: {
+        name?: string;
+        nodeType?: string;
+        aspectNames?: Array<string>;
+        properties?: {
             [key: string]: string;
         };
-        "relativePath"?: string;
-        "association"?: NodeBodyAssociation;
-        "secondaryChildren"?: Array<ChildAssociationBody>;
-        "targets"?: Array<AssociationBody>;
-        "permissions"?: PermissionsBodyUpdate;
+        relativePath?: string;
+        association?: NodeBodyAssociation;
+        secondaryChildren?: Array<ChildAssociationBody>;
+        targets?: Array<AssociationBody>;
+        permissions?: PermissionsBodyUpdate;
     }
 
     export interface NodeBodyAssociation {
-        "assocType"?: string;
+        assocType?: string;
     }
 
     export interface NodeBodyLock {
-        "timeToExpire"?: number;
-        "type"?: NodeBodyLock.TypeEnum;
-        "lifetime"?: NodeBodyLock.LifetimeEnum;
+        timeToExpire?: number;
+        type?: NodeBodyLock.TypeEnum;
+        lifetime?: NodeBodyLock.LifetimeEnum;
     }
 
     namespace NodeBodyLock {
@@ -826,65 +826,65 @@ declare namespace AlfrescoApi {
     }
 
     export interface MoveBody {
-        "targetParentId"?: string;
-        "name"?: string;
+        targetParentId?: string;
+        name?: string;
     }
 
     export interface NodeChildAssociation extends Node {
-        "association"?: ChildAssociationInfo;
+        association?: ChildAssociationInfo;
     }
 
     export interface NodeChildAssociationEntry {
-        "entry"?: NodeChildAssociation;
+        entry?: NodeChildAssociation;
     }
 
     export interface NodeChildAssociationPaging {
-        "list"?: NodeChildAssociationPagingList;
+        list?: NodeChildAssociationPagingList;
     }
 
     export interface NodeChildAssociationPagingList {
-        "entries"?: Array<NodeChildAssociationEntry>;
-        "pagination"?: Pagination;
-        "source"?: Node;
+        entries?: Array<NodeChildAssociationEntry>;
+        pagination?: Pagination;
+        source?: Node;
     }
 
     export interface NodeEntry {
-        "entry"?: Node;
+        entry?: Node;
     }
 
     export interface NodePaging {
-        "list"?: NodePagingList;
+        list?: NodePagingList;
     }
 
     export interface NodePagingList {
-        "entries"?: Array<NodeEntry>;
-        "pagination"?: Pagination;
-        "source"?: Node;
+        entries?: Array<NodeEntry>;
+        pagination?: Pagination;
+        source?: Node;
     }
 
     export interface Pagination {
-        "count"?: number;
-        "hasMoreItems"?: boolean;
-        "totalItems"?: number;
-        "skipCount"?: number;
-        "maxItems"?: number;
+        count?: number;
+        hasMoreItems?: boolean;
+        totalItems?: number;
+        skipCount?: number;
+        maxItems?: number;
     }
 
     export interface PathElement {
-        "id"?: string;
-        "name"?: string;
+        id?: string;
+        name?: string;
     }
 
     export interface PathInfo {
-        "elements"?: Array<PathElement>;
-        "name"?: string;
-        "isComplete"?: boolean;
+        elements?: Array<PathElement>;
+        name?: string;
+        isComplete?: boolean;
     }
 
     export interface PermissionElement {
-        "authorityId"?: string;
-        "name"?: string;
-        "accessStatus"?: PermissionElement.AccessStatusEnum;
+        authorityId?: string;
+        name?: string;
+        accessStatus?: PermissionElement.AccessStatusEnum;
     }
 
     namespace PermissionElement {
@@ -895,102 +895,102 @@ declare namespace AlfrescoApi {
     }
 
     export interface PermissionsBodyUpdate {
-        "isInheritanceEnabled"?: boolean;
-        "locallySet"?: Array<PermissionElement>;
+        isInheritanceEnabled?: boolean;
+        locallySet?: Array<PermissionElement>;
     }
 
     export interface PermissionsInfo {
-        "isInheritanceEnabled"?: boolean;
-        "inherited"?: Array<PermissionElement>;
-        "locallySet"?: Array<PermissionElement>;
-        "settable"?: Array<string>;
+        isInheritanceEnabled?: boolean;
+        inherited?: Array<PermissionElement>;
+        locallySet?: Array<PermissionElement>;
+        settable?: Array<string>;
     }
 
     export interface Person {
-        "id"?: string;
-        "firstName"?: string;
-        "lastName"?: string;
-        "description"?: string;
-        "avatarId"?: string;
-        "email"?: string;
-        "skypeId"?: string;
-        "googleId"?: string;
-        "instantMessageId"?: string;
-        "jobTitle"?: string;
-        "location"?: string;
-        "company"?: Company;
-        "mobile"?: string;
-        "telephone"?: string;
-        "statusUpdatedAt"?: Date;
-        "userStatus"?: string;
-        "enabled"?: boolean;
-        "emailNotificationsEnabled"?: boolean;
-        "aspectNames"?: Array<string>;
-        "properties"?: {
+        id?: string;
+        firstName?: string;
+        lastName?: string;
+        description?: string;
+        avatarId?: string;
+        email?: string;
+        skypeId?: string;
+        googleId?: string;
+        instantMessageId?: string;
+        jobTitle?: string;
+        location?: string;
+        company?: Company;
+        mobile?: string;
+        telephone?: string;
+        statusUpdatedAt?: Date;
+        userStatus?: string;
+        enabled?: boolean;
+        emailNotificationsEnabled?: boolean;
+        aspectNames?: Array<string>;
+        properties?: {
             [key: string]: string;
         };
     }
 
     export interface PersonBodyadd {
-        "id"?: string;
-        "firstName"?: string;
-        "lastName"?: string;
-        "description"?: string;
-        "email"?: string;
-        "skypeId"?: string;
-        "googleId"?: string;
-        "instantMessageId"?: string;
-        "jobTitle"?: string;
-        "location"?: string;
-        "company"?: Company;
-        "mobile"?: string;
-        "telephone"?: string;
-        "userStatus"?: string;
-        "enabled"?: boolean;
-        "emailNotificationsEnabled"?: boolean;
-        "password"?: string;
-        "aspectNames"?: Array<string>;
-        "properties"?: {
+        id?: string;
+        firstName?: string;
+        lastName?: string;
+        description?: string;
+        email?: string;
+        skypeId?: string;
+        googleId?: string;
+        instantMessageId?: string;
+        jobTitle?: string;
+        location?: string;
+        company?: Company;
+        mobile?: string;
+        telephone?: string;
+        userStatus?: string;
+        enabled?: boolean;
+        emailNotificationsEnabled?: boolean;
+        password?: string;
+        aspectNames?: Array<string>;
+        properties?: {
             [key: string]: string;
         };
     }
 
     export interface PersonBodyUpdate {
-        "firstName"?: string;
-        "lastName"?: string;
-        "description"?: string;
-        "email"?: string;
-        "skypeId"?: string;
-        "googleId"?: string;
-        "instantMessageId"?: string;
-        "jobTitle"?: string;
-        "location"?: string;
-        "company"?: Company;
-        "mobile"?: string;
-        "telephone"?: string;
-        "userStatus"?: string;
-        "enabled"?: boolean;
-        "emailNotificationsEnabled"?: boolean;
-        "password"?: string;
-        "oldPassword"?: string;
-        "aspectNames"?: Array<string>;
-        "properties"?: {
+        firstName?: string;
+        lastName?: string;
+        description?: string;
+        email?: string;
+        skypeId?: string;
+        googleId?: string;
+        instantMessageId?: string;
+        jobTitle?: string;
+        location?: string;
+        company?: Company;
+        mobile?: string;
+        telephone?: string;
+        userStatus?: string;
+        enabled?: boolean;
+        emailNotificationsEnabled?: boolean;
+        password?: string;
+        oldPassword?: string;
+        aspectNames?: Array<string>;
+        properties?: {
             [key: string]: string;
         };
     }
 
     export interface PersonEntry {
-        "entry"?: Person;
+        entry?: Person;
     }
 
     export interface PersonNetwork {
-        "id"?: string;
-        "homeNetwork"?: boolean;
-        "isEnabled"?: boolean;
-        "adddAt"?: Date;
-        "paidNetwork"?: boolean;
-        "subscriptionLevel"?: PersonNetwork.SubscriptionLevelEnum;
-        "quotas"?: Array<NetworkQuota>;
+        id?: string;
+        homeNetwork?: boolean;
+        isEnabled?: boolean;
+        adddAt?: Date;
+        paidNetwork?: boolean;
+        subscriptionLevel?: PersonNetwork.SubscriptionLevelEnum;
+        quotas?: Array<NetworkQuota>;
     }
 
     namespace PersonNetwork {
@@ -1002,60 +1002,60 @@ declare namespace AlfrescoApi {
     }
 
     export interface PersonNetworkEntry {
-        "entry"?: PersonNetwork;
+        entry?: PersonNetwork;
     }
 
     export interface PersonNetworkPaging {
-        "list"?: PersonNetworkPagingList;
+        list?: PersonNetworkPagingList;
     }
 
     export interface PersonNetworkPagingList {
-        "entries"?: Array<PersonNetworkEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<PersonNetworkEntry>;
+        pagination?: Pagination;
     }
 
     export interface PersonPaging {
-        "list"?: PersonPagingList;
+        list?: PersonPagingList;
     }
 
     export interface PersonPagingList {
-        "entries"?: Array<PersonEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<PersonEntry>;
+        pagination?: Pagination;
     }
 
     export interface Preference {
-        "id"?: string;
-        "value"?: string;
+        id?: string;
+        value?: string;
     }
 
     export interface PreferenceEntry {
-        "entry"?: Preference;
+        entry?: Preference;
     }
 
     export interface PreferencePaging {
-        "list"?: PreferencePagingList;
+        list?: PreferencePagingList;
     }
 
     export interface PreferencePagingList {
-        "entries"?: Array<PreferenceEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<PreferenceEntry>;
+        pagination?: Pagination;
     }
 
     export interface Rating {
-        "id"?: string;
-        "aggregate"?: RatingAggregate;
-        "ratedAt"?: Date;
-        "myRating"?: string;
+        id?: string;
+        aggregate?: RatingAggregate;
+        ratedAt?: Date;
+        myRating?: string;
     }
 
     export interface RatingAggregate {
-        "average"?: number;
-        "numberOfRatings"?: number;
+        average?: number;
+        numberOfRatings?: number;
     }
 
     export interface RatingBody {
-        "id"?: RatingBody.IdEnum;
-        "myRating"?: string;
+        id?: RatingBody.IdEnum;
+        myRating?: string;
     }
 
     namespace RatingBody {
@@ -1066,22 +1066,22 @@ declare namespace AlfrescoApi {
     }
 
     export interface RatingEntry {
-        "entry"?: Rating;
+        entry?: Rating;
     }
 
     export interface RatingPaging {
-        "list"?: RatingPagingList;
+        list?: RatingPagingList;
     }
 
     export interface RatingPagingList {
-        "entries"?: Array<RatingEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<RatingEntry>;
+        pagination?: Pagination;
     }
 
     export interface Rendition {
-        "id"?: string;
-        "content"?: ContentInfo;
-        "status"?: Rendition.StatusEnum;
+        id?: string;
+        content?: ContentInfo;
+        status?: Rendition.StatusEnum;
     }
 
     namespace Rendition {
@@ -1092,72 +1092,72 @@ declare namespace AlfrescoApi {
     }
 
     export interface RenditionBody {
-        "id"?: string;
+        id?: string;
     }
 
     export interface RenditionEntry {
-        "entry"?: Rendition;
+        entry?: Rendition;
     }
 
     export interface RenditionPaging {
-        "list"?: RenditionPagingList;
+        list?: RenditionPagingList;
     }
 
     export interface RenditionPagingList {
-        "entries"?: Array<RenditionEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<RenditionEntry>;
+        pagination?: Pagination;
     }
 
     export interface RevertBody {
-        "majorVersion"?: boolean;
-        "comment"?: string;
+        majorVersion?: boolean;
+        comment?: string;
     }
 
     export interface SharedLink {
-        "id"?: string;
-        "expiresAt"?: Date;
-        "nodeId"?: string;
-        "name"?: string;
-        "modifiedAt"?: Date;
-        "modifiedByUser"?: UserInfo;
-        "sharedByUser"?: UserInfo;
-        "content"?: ContentInfo;
-        "allowableOperations"?: Array<string>;
+        id?: string;
+        expiresAt?: Date;
+        nodeId?: string;
+        name?: string;
+        modifiedAt?: Date;
+        modifiedByUser?: UserInfo;
+        sharedByUser?: UserInfo;
+        content?: ContentInfo;
+        allowableOperations?: Array<string>;
     }
 
     export interface SharedLinkBody {
-        "nodeId"?: string;
-        "expiresAt"?: Date;
+        nodeId?: string;
+        expiresAt?: Date;
     }
 
     export interface EmailSharedLinkBody {
-        "client"?: string;
-        "message"?: string;
-        "locale"?: string;
-        "recipientEmails"?: Array<string>;
+        client?: string;
+        message?: string;
+        locale?: string;
+        recipientEmails?: Array<string>;
     }
 
     export interface SharedLinkEntry {
-        "entry"?: SharedLink;
+        entry?: SharedLink;
     }
 
     export interface SharedLinkPaging {
-        "list"?: SharedLinkPagingList;
+        list?: SharedLinkPagingList;
     }
 
     export interface SharedLinkPagingList {
-        "entries"?: Array<SharedLinkEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<SharedLinkEntry>;
+        pagination?: Pagination;
     }
 
     export interface Site {
-        "id"?: string;
-        "guid"?: string;
-        "title"?: string;
-        "description"?: string;
-        "visibility"?: Site.VisibilityEnum;
-        "preset"?: string;
-        "role"?: Site.RoleEnum;
+        id?: string;
+        guid?: string;
+        title?: string;
+        description?: string;
+        visibility?: Site.VisibilityEnum;
+        preset?: string;
+        role?: Site.RoleEnum;
     }
 
     namespace Site {
@@ -1175,10 +1175,10 @@ declare namespace AlfrescoApi {
     }
 
     export interface SiteBodyadd {
-        "id"?: string;
-        "title"?: string;
-        "description"?: string;
-        "visibility"?: SiteBodyadd.VisibilityEnum;
+        id?: string;
+        title?: string;
+        description?: string;
+        visibility?: SiteBodyadd.VisibilityEnum;
     }
 
     namespace SiteBodyadd {
@@ -1190,9 +1190,9 @@ declare namespace AlfrescoApi {
     }
 
     export interface SiteBodyUpdate {
-        "title"?: string;
-        "description"?: string;
-        "visibility"?: SiteBodyUpdate.VisibilityEnum;
+        title?: string;
+        description?: string;
+        visibility?: SiteBodyUpdate.VisibilityEnum;
     }
 
     namespace SiteBodyUpdate {
@@ -1204,31 +1204,31 @@ declare namespace AlfrescoApi {
     }
 
     export interface SiteContainer {
-        "id"?: string;
-        "folderId"?: string;
+        id?: string;
+        folderId?: string;
     }
 
     export interface SiteContainerEntry {
-        "entry"?: SiteContainer;
+        entry?: SiteContainer;
     }
 
     export interface SiteContainerPaging {
-        "list"?: SiteContainerPagingList;
+        list?: SiteContainerPagingList;
     }
 
     export interface SiteContainerPagingList {
-        "entries"?: Array<SiteContainerEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<SiteContainerEntry>;
+        pagination?: Pagination;
     }
 
     export interface SiteEntry {
-        "entry"?: Site;
+        entry?: Site;
     }
 
     export interface SiteMember {
-        "id"?: string;
-        "person"?: Person;
-        "role"?: SiteMember.RoleEnum;
+        id?: string;
+        person?: Person;
+        role?: SiteMember.RoleEnum;
     }
 
     namespace SiteMember {
@@ -1241,21 +1241,21 @@ declare namespace AlfrescoApi {
     }
 
     export interface SiteMemberEntry {
-        "entry"?: SiteMember;
+        entry?: SiteMember;
     }
 
     export interface SiteMemberPaging {
-        "list"?: SiteMemberPagingList;
+        list?: SiteMemberPagingList;
     }
 
     export interface SiteMemberPagingList {
-        "entries"?: Array<SiteMemberEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<SiteMemberEntry>;
+        pagination?: Pagination;
     }
 
     export interface SiteMembershipBodyadd {
-        "role"?: SiteMembershipBodyadd.RoleEnum;
-        "id"?: string;
+        role?: SiteMembershipBodyadd.RoleEnum;
+        id?: string;
     }
 
     namespace SiteMembershipBodyadd {
@@ -1268,7 +1268,7 @@ declare namespace AlfrescoApi {
     }
 
     export interface SiteMembershipBodyUpdate {
-        "role"?: SiteMembershipBodyUpdate.RoleEnum;
+        role?: SiteMembershipBodyUpdate.RoleEnum;
     }
 
     namespace SiteMembershipBodyUpdate {
@@ -1281,49 +1281,49 @@ declare namespace AlfrescoApi {
     }
 
     export interface SiteMembershipRequest {
-        "id"?: string;
-        "adddAt"?: Date;
-        "site"?: Site;
-        "message"?: string;
+        id?: string;
+        adddAt?: Date;
+        site?: Site;
+        message?: string;
     }
 
     export interface SiteMembershipRequestBody {
-        "message"?: string;
-        "id"?: string;
-        "title"?: string;
+        message?: string;
+        id?: string;
+        title?: string;
     }
 
     export interface SiteMembershipRequestBodyUpdate {
-        "message"?: string;
+        message?: string;
     }
 
     export interface SiteMembershipRequestEntry {
-        "entry"?: SiteMembershipRequest;
+        entry?: SiteMembershipRequest;
     }
 
     export interface SiteMembershipRequestPaging {
-        "list"?: SiteMembershipRequestPagingList;
+        list?: SiteMembershipRequestPagingList;
     }
 
     export interface SiteMembershipRequestPagingList {
-        "entries"?: Array<SiteMembershipRequestEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<SiteMembershipRequestEntry>;
+        pagination?: Pagination;
     }
 
     export interface SitePaging {
-        "list"?: SitePagingList;
+        list?: SitePagingList;
     }
 
     export interface SitePagingList {
-        "entries"?: Array<SiteEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<SiteEntry>;
+        pagination?: Pagination;
     }
 
     export interface SiteRole {
-        "site"?: Site;
-        "id"?: string;
-        "guid"?: string;
-        "role"?: SiteRole.RoleEnum;
+        site?: Site;
+        id?: string;
+        guid?: string;
+        role?: SiteRole.RoleEnum;
     }
 
     namespace SiteRole {
@@ -1336,87 +1336,87 @@ declare namespace AlfrescoApi {
     }
 
     export interface SiteRoleEntry {
-        "entry"?: SiteRole;
+        entry?: SiteRole;
     }
 
     export interface SiteRolePaging {
-        "list"?: SiteRolePagingList;
+        list?: SiteRolePagingList;
     }
 
     export interface SiteRolePagingList {
-        "entries"?: Array<SiteRoleEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<SiteRoleEntry>;
+        pagination?: Pagination;
     }
 
     export interface Tag {
-        "id"?: string;
-        "tag"?: string;
+        id?: string;
+        tag?: string;
     }
 
     export interface TagBody {
-        "tag"?: string;
+        tag?: string;
     }
 
     export interface TagEntry {
-        "entry"?: Tag;
+        entry?: Tag;
     }
 
     export interface TagPaging {
-        "list"?: TagPagingList;
+        list?: TagPagingList;
     }
 
     export interface TagPagingList {
-        "entries"?: Array<TagEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<TagEntry>;
+        pagination?: Pagination;
     }
 
     export interface UserInfo {
-        "displayName"?: string;
-        "id"?: string;
+        displayName?: string;
+        id?: string;
     }
 
     export interface Version {
-        "id"?: string;
-        "versionComment"?: string;
-        "name"?: string;
-        "nodeType"?: string;
-        "isFolder"?: boolean;
-        "isFile"?: boolean;
-        "modifiedAt"?: Date;
-        "modifiedByUser"?: UserInfo;
-        "content"?: ContentInfo;
-        "aspectNames"?: Array<string>;
-        "properties"?: {
+        id?: string;
+        versionComment?: string;
+        name?: string;
+        nodeType?: string;
+        isFolder?: boolean;
+        isFile?: boolean;
+        modifiedAt?: Date;
+        modifiedByUser?: UserInfo;
+        content?: ContentInfo;
+        aspectNames?: Array<string>;
+        properties?: {
             [key: string]: string;
         };
     }
 
     export interface VersionEntry {
-        "entry"?: Version;
+        entry?: Version;
     }
 
     export interface VersionPaging {
-        "list"?: VersionPagingList;
+        list?: VersionPagingList;
     }
 
     export interface VersionPagingList {
-        "entries"?: Array<VersionEntry>;
-        "pagination"?: Pagination;
+        entries?: Array<VersionEntry>;
+        pagination?: Pagination;
     }
 
-    // ======= Core End ======
+    //  ======= Core End ======
 
 
-    // ======= Auth Start ======
+    //  ======= Auth Start ======
 
 
-    // ======= Auth End ======
+    //  ======= Auth End ======
 
 
-    // ======= Search Start ======
+    //  ======= Search Start ======
 
 
-    // ======= Search End ======
+    //  ======= Search End ======
 
     export interface Activiti {
         new(config: any): Activiti;
@@ -1676,27 +1676,27 @@ declare namespace AlfrescoApi {
     }
 
     export interface CustomModelApi {
-        createCustomModel(status:string,, description:string,, name:string,, namespaceUri:string,, namespacePrefix:string) :Promise<{}>;
-        createCustomType(modelName:string, name:string, parentName:string, title, description:string) :Promise<{}>;
-        createCustomAspect(modelName:string, name:string, parentName:string, title, description:string) :Promise<{}>;
-        createCustomConstraint(modelName:string, name:string, type:string, parameters:any) :Promise<{}>;
-        activateCustomModel(modelName:string) :Promise<{}>;
-        deactivateCustomModel(modelName:string) :Promise<{}>;
-        addPropertyToAspect(modelName:string, aspectName:string, properties:any) :Promise<{}>;
-        addPropertyToType(modelName:string, updateCustomModel, properties:any):Promise<{}>;
-        updateCustomModel(modelName:string, description:string, namespaceUri:string, namespacePrefix:string) :Promise<{}>;
-        updateCustomType(modelName:string, typeName:string, description:string, parentName:string, title:string) :Promise<{}>;
-        updateCustomAspect(modelName:string, aspectName:string, description:string, parentName:string, title:string) :Promise<{}>;
-        getAllCustomModel() :Promise<{}>;
-        getCustomModel(modelName:string, queryParams:any) :Promise<{}>;
-        getAllCustomType(modelName:string) :Promise<{}>;
-        getCustomType(modelName:string, typeName:string, queryParams:any) :Promise<{}>;
-        getAllCustomAspect(modelName:string) :Promise<{}>;
-        getCustomAspect(modelName:string, aspectName:string, queryParams:any) :Promise<{}>;
-        getAllCustomConstraints(modelName:string) :Promise<{}>;
-        getCustomConstraints(modelName:string, constraintName:string, queryParams:any) :Promise<{}>;
-        deleteCustomModel(modelName:string) :Promise<{}>;
-        deleteCustomType(modelName:string, typeName:string):Promise<{}>;
+        createCustomModel(status: string, description: string, name: string, namespaceUri: string, namespacePrefix: string): Promise<{}>;
+        createCustomType(modelName: string, name: string, parentName: string, title, description: string): Promise<{}>;
+        createCustomAspect(modelName: string, name: string, parentName: string, title, description: string): Promise<{}>;
+        createCustomConstraint(modelName: string, name: string, type: string, parameters: any): Promise<{}>;
+        activateCustomModel(modelName: string): Promise<{}>;
+        deactivateCustomModel(modelName: string): Promise<{}>;
+        addPropertyToAspect(modelName: string, aspectName: string, properties: any): Promise<{}>;
+        addPropertyToType(modelName: string, updateCustomModel, properties: any): Promise<{}>;
+        updateCustomModel(modelName: string, description: string, namespaceUri: string, namespacePrefix: string): Promise<{}>;
+        updateCustomType(modelName: string, typeName: string, description: string, parentName: string, title: string): Promise<{}>;
+        updateCustomAspect(modelName: string, aspectName: string, description: string, parentName: string, title: string): Promise<{}>;
+        getAllCustomModel(): Promise<{}>;
+        getCustomModel(modelName: string, queryParams: any): Promise<{}>;
+        getAllCustomType(modelName: string): Promise<{}>;
+        getCustomType(modelName: string, typeName: string, queryParams: any): Promise<{}>;
+        getAllCustomAspect(modelName: string): Promise<{}>;
+        getCustomAspect(modelName: string, aspectName: string, queryParams: any): Promise<{}>;
+        getAllCustomConstraints(modelName: string): Promise<{}>;
+        getCustomConstraints(modelName: string, constraintName: string, queryParams: any): Promise<{}>;
+        deleteCustomModel(modelName: string): Promise<{}>;
+        deleteCustomType(modelName: string, typeName: string): Promise<{}>;
     }
 
     export interface AlfrescoApiConfig {
